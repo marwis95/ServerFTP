@@ -2,3 +2,7 @@ c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\bin\De
 c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\obj\Debug\ServerFTP.csprojResolveAssemblyReference.cache
 c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\obj\Debug\ServerFTP.Properties.Resources.resources
 c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\obj\Debug\ServerFTP.csproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\bin\Debug\ServerFTP.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\bin\Debug\ServerFTP.pdb
+c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\obj\Debug\ServerFTP.exe
+c:\users\lenovo\documents\visual studio 2015\Projects\ServerFTP\ServerFTP\obj\Debug\ServerFTP.pdb

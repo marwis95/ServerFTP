@@ -21,15 +21,9 @@ namespace ServerFTP
         public Form1()
         {
             InitializeComponent();
+            Start();
         }
 
-        private void HandleAcceptTcpClient(IAsyncResult result)
-        {
-            TcpClient client = _listener.EndAcceptTcpClient(result);
-            _listener.BeginAcceptTcpClient(HandleAcceptTcpClient, _listener);
-
-            // DO SOMETHING.
-        }
 
         public void Start()
         {
@@ -40,6 +34,7 @@ namespace ServerFTP
 
         }
 
+
         public void Stop()
         {
 
@@ -47,6 +42,35 @@ namespace ServerFTP
             {
                 _listener.Stop();
             }
+
+        }
+
+
+        private void HandleAcceptTcpClient(IAsyncResult result)
+        {
+            TcpClient client = _listener.EndAcceptTcpClient(result);
+            _listener.BeginAcceptTcpClient(HandleAcceptTcpClient, _listener);
+
+            NetworkStream stream = client.GetStream();
+
+            using (StreamWriter writer = new StreamWriter(stream, Encoding.ASCII))
+            using (StreamReader reader = new StreamReader(stream, Encoding.ASCII))
+            {
+                writer.WriteLine("Polaczono");
+                writer.Flush();
+                writer.WriteLine("Bede powtarzal za Toba. Wyslij pusta linie aby zakonczyc");
+                writer.Flush();
+
+                String line = null;
+
+                while(!string.IsNullOrEmpty(line = reader.ReadLine()))
+                {
+                    writer.WriteLine("Echoing back: {0}", line);
+                    writer.Flush();
+                }
+
+            }
+
 
         }
 
